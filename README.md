@@ -29,14 +29,15 @@ crm-backend/
   - батьки
   - учні
   - вчителі
-- 🔹 Поточний стан: **проєкт створено, реалізація ще не почалась**
+- 🔹 Поточний стан: **проєкт створено, реалізація почалась**
+- 🔹 Реалізовано:
+  - `UserEntity` з полями: `id`, `fullName`, `email`, `role`, `password`, `isActive`
+  - `Role` enum: `ROLE_ADMIN`, `ROLE_TEACHER`, `ROLE_PARENT`, `ROLE_STUDENT`
 - 🔹 У планах:
-  - Створення Entity `UserEntity` з полями: `id`, `fullName`, `email`, `role`, `password`, `isActive`
   - Реєстрація/логін користувачів
   - Валідація та DTO
   - Swagger документація
   - Інтеграція з NotificationService (email підтвердження)
-  - Підтримка ролей (ROLE_ADMIN, ROLE_PARENT, ROLE_TEACHER, ROLE_STUDENT)
 
 ### 2. **Student Service**
 - 🔹 Відповідає за студентів, їхній баланс, історію цін
@@ -89,7 +90,9 @@ crm-backend/
 ## 🗃️ Бази даних (ER-діаграми)
 
 🟦 _будуть додані схеми для:_
-- user-service: UserEntity (з ролями)
+- user-service:
+  - UserEntity: `id`, `fullName`, `email`, `password`, `role`, `isActive`
+  - Role (enum): `ROLE_ADMIN`, `ROLE_TEACHER`, `ROLE_PARENT`, `ROLE_STUDENT`
 - student-service: Student, Pricing, Balance
 - teacher-service: TeacherEntity
 - lesson-service: LessonEntity
@@ -110,10 +113,12 @@ crm-backend/
 - [x] Створено базовий проєкт UserService
 - [x] Створено StudentService: сутності + DTO
 - [x] TeacherService: структура, DTO, Swagger
+- [x] UserService: `UserEntity` + `Role`
 
 ### 🛠️ В процесі:
 - [ ] TeacherService: API, інтеграція з уроками
 - [ ] LessonService: створення уроку, логіка списання
+- [ ] UserService: створення DTO, UserServiceImpl, контролера
 
 ### 📌 Наступні кроки:
 - [ ] Завершити TeacherService
@@ -130,5 +135,3 @@ crm-backend/
 ---
 
 > 🔄 Документ оновлюється у процесі розробки
-
-
